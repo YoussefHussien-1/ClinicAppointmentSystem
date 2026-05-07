@@ -1,0 +1,61 @@
+/* الخلفية العامة */
+.root {
+    -fx-background-color: #f4f7f6;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* ستايل العناوين (Labels) */
+.label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+/* ستايل خانات الكتابة */
+.text-field {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #bdc3c7;
+    -fx-background-color: white;
+    -fx-padding: 8 12;
+}
+
+.text-field:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2;
+}
+
+/* ستايل الأزرار */
+.button {
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-transition: 0.3s;
+}
+
+/* زر الحفظ (Save) */
+.save-button {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+}
+
+.save-button:hover {
+    -fx-background-color: #2ecc71;
+}
+
+/* زر المسح (Clear) */
+.clear-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+
+.clear-button:hover {
+    -fx-background-color: #ff7675;
+}
+
+/* الـ ChoiceBox */
+.choice-box {
+    -fx-background-radius: 10;
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 10;
+}

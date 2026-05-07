@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: #f5f6fa;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clinicappointmentsystem.controllers.PatientController">
+   <stylesheets>
+      <URL value="@../CSS/style.css" />
+   </stylesheets>
+   <children>
+      <VBox spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="30.0" left="40.0" right="40.0" top="20.0" />
+         </padding>
+         <children>
+
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Button onAction="#handleBackToMenu" prefHeight="35.0" prefWidth="110.0"
+                          style="-fx-background-color: white; -fx-text-fill: #2c3e50; -fx-border-color: #dcdde1; -fx-border-radius: 8; -fx-background-radius: 8; -fx-font-weight: bold; -fx-cursor: hand;"
+                          text="⬅ Back" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+
+            <VBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <Label text="Patient Registration &amp; Booking" textFill="#2980b9">
+                     <font>
+                        <Font name="System Bold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label text="Please fill in all details to secure an appointment slot" textFill="#7f8c8d" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </VBox>
+
+            <GridPane hgap="20.0" vgap="15.0" VBox.vgrow="ALWAYS" style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 0);">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="180.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="350.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Name:" textFill="#34495e">
+                     <font> <Font name="System Semibold" size="16.0" /> </font>
+                  </Label>
+                  <TextField fx:id="NameFeild" prefHeight="40.0" promptText="Enter Patient's Full Name" GridPane.columnIndex="1" style="-fx-background-radius: 5;" />
+
+                  <Label text="Phone:" GridPane.rowIndex="1" textFill="#34495e">
+                     <font> <Font name="System Semibold" size="16.0" /> </font>
+                  </Label>
+                  <TextField fx:id="PhoneFeild" prefHeight="40.0" promptText="e.g. 01XXXXXXXXX" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-background-radius: 5;" />
+
+                  <Label text="Age:" GridPane.rowIndex="2" textFill="#34495e">
+                     <font> <Font name="System Semibold" size="16.0" /> </font>
+                  </Label>
+                  <TextField fx:id="AgeFeild" prefHeight="40.0" promptText="Enter Age" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-background-radius: 5;" />
+
+                  <Label text="Gender:" GridPane.rowIndex="3" textFill="#34495e">
+                     <font> <Font name="System Semibold" size="16.0" /> </font>
+                  </Label>
+                  <ChoiceBox fx:id="genderBox" maxWidth="1.7976931348623157E308" prefHeight="40.0" GridPane.columnIndex="1" GridPane.rowIndex="3" style="-fx-background-radius: 5; -fx-background-color: white; -fx-border-color: #dcdde1; -fx-border-radius: 5;" />
+
+                  <Label text="Specialty:" GridPane.rowIndex="4" textFill="#34495e">
+                     <font> <Font name="System Semibold" size="16.0" /> </font>
+                  </Label>
+                  <ChoiceBox fx:id="specialtyChoiceBox" maxWidth="1.7976931348623157E308" prefHeight="40.0" GridPane.columnIndex="1" GridPane.rowIndex="4" style="-fx-background-radius: 5; -fx-background-color: white; -fx-border-color: #dcdde1; -fx-border-radius: 5;" />
+
+                  <Label text="Select Doctor:" GridPane.rowIndex="5" textFill="#34495e">
+                     <font> <Font name="System Semibold" size="16.0" /> </font>
+                  </Label>
+                  <ChoiceBox fx:id="doctorChoiceBox" maxWidth="1.7976931348623157E308" prefHeight="40.0" GridPane.columnIndex="1" GridPane.rowIndex="5" style="-fx-background-radius: 5; -fx-background-color: white; -fx-border-color: #dcdde1; -fx-border-radius: 5;" />
+
+                  <Label text="Date:" GridPane.rowIndex="6" textFill="#34495e">
+                     <font> <Font name="System Semibold" size="16.0" /> </font>
+                  </Label>
+                  <DatePicker fx:id="datePicker" maxWidth="1.7976931348623157E308" prefHeight="40.0" GridPane.columnIndex="1" GridPane.rowIndex="6" style="-fx-background-radius: 5;" />
+
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearFields" prefHeight="50.0" style="-fx-background-color: #ecf0f1; -fx-text-fill: #7f8c8d; -fx-font-weight: bold; -fx-background-radius: 8;" text="Clear Form" GridPane.rowIndex="7" />
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#AddNewPatient" prefHeight="50.0" style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" text="Save &amp; Book Appointment" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

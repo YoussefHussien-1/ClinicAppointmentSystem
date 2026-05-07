@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clinicappointmentsystem.controllers.AppointmentController">
+    <stylesheets>
+        <URL value="@../CSS/style.css" />
+    </stylesheets>
+
+    <children>
+        <HBox spacing="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+
+                <VBox prefWidth="320.0" spacing="20.0" style="-fx-background-color: white; -fx-border-color: #dcdde1; -fx-border-width: 0 1 0 0;">
+                    <padding>
+                        <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+                    </padding>
+                    <children>
+
+                        <Button onAction="#handleBackToMenu" prefHeight="40.0" prefWidth="120.0"
+                                style="-fx-background-color: #f1f2f6; -fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand;"
+                                text="⬅ Back">
+                            <VBox.margin>
+                                <Insets bottom="5.0" />
+                            </VBox.margin>
+                        </Button>
+
+                        <Label text="Calendar Filters" textFill="#2980b9">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+
+                        <Separator prefWidth="200.0" />
+
+                        <VBox spacing="10.0">
+                            <children>
+                                <Label style="-fx-font-weight: bold;" text="Filter by Specialty:" textFill="#34495e" />
+                                <ChoiceBox fx:id="specialtyFilterBox" maxWidth="1.7976931348623157E308" prefHeight="38.0"
+                                           style="-fx-background-color: white; -fx-border-color: #dcdde1; -fx-border-radius: 5;" />
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="10.0">
+                            <children>
+                                <Label style="-fx-font-weight: bold;" text="Filter by Doctor:" textFill="#34495e" />
+                                <ChoiceBox fx:id="doctorFilterBox" maxWidth="1.7976931348623157E308" prefHeight="38.0"
+                                           style="-fx-background-color: white; -fx-border-color: #dcdde1; -fx-border-radius: 5;" />
+                            </children>
+                        </VBox>
+
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#refreshCalendar" prefHeight="50.0"
+                                style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand;" text="Refresh Schedule">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+
+                        <VBox VBox.vgrow="ALWAYS" />
+
+                        <Separator prefWidth="200.0" />
+
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goToAddPatient" prefHeight="45.0"
+                                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" text="+ New Appointment" />
+
+                        <Label style="-fx-text-fill: #7f8c8d; -fx-font-style: italic;" text="Note: All appointments are automatically synced from patient registration." wrapText="true">
+                            <font>
+                                <Font size="11.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <StackPane fx:id="calendarContainer" HBox.hgrow="ALWAYS" style="-fx-background-color: #f5f6fa;">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                </StackPane>
+
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
