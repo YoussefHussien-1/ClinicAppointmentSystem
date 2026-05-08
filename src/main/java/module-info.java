@@ -7,6 +7,7 @@ module com.example.clinicappointmentsystem {
     requires net.synedra.validatorfx;
     requires org.kordamp.bootstrapfx.core;
     requires com.calendarfx.view;
+    requires java.sql;
 
     opens com.example.clinicappointmentsystem.controllers to javafx.fxml;
 
